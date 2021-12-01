@@ -8,10 +8,19 @@ html,body,#root,.App{
   background-color:  #E5E5E5;;
 }
 
+.App{
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
 header{
   background-color:#FFFFFF;
   box-shadow: 0px 4px 4px 4px rgba(79, 79, 79, 0.15);
   padding: 20px 0;
+}
+
+.main-section-container{
+  overflow: auto;
 }
 .container{
   max-width: 1200px;
@@ -35,4 +44,28 @@ header .container{
 .login-button{
   background-color: unset;
   color: #0080A8;
+}
+.category-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 25px;
+  padding: 50px;
+}
+
+.category-card{
+  display: grid;
+}
+.category-image{
+  width: 100%;
+}
+.details-section{
+  background-color: #FFFFFF;
+  padding: 15px;
+}
+
+.details-section p{  
+  display:-webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient:vertical ;
+  overflow: hidden;
 }

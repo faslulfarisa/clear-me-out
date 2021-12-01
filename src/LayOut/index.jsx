@@ -20,7 +20,9 @@ const Layout = () => {
           </div>
    
       </header>
+      <div className="main-section-container">
       <Outlet/>
+      </div>
      
     </div>
        
