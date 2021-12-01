@@ -8,6 +8,7 @@ import Ask from './Routes/Ask';
 import Post from './Routes/Post';
 import Feedback from './Routes/Feedback';
 import Signup from './Routes/Signup';
+import LayOut from './LayOut'
 
 
 // Home
@@ -21,22 +22,18 @@ import Signup from './Routes/Signup';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <h1>Header</h1>
         <Routes>
-          <Route path="" element={<Home/>}/>
-          <Route path="category" element={<Category/>}/>
-          <Route path="login" element={<Login/>}/>
-          <Route path="question" element={<Question/>}/>
-          <Route path="ask" element={<Ask/>}/>
-          <Route path="post" element={<Post/>}/>
-          <Route path="feedback" element={<Feedback/>}/>
-          <Route path="signup" element={<Signup/>}/>
+          <Route path="" element={<LayOut/>}>
+            <Route path="" element={<Home/>}/>
+            <Route path="category" element={<Category/>}/>
+            <Route path="login" element={<Login/>}/>
+            <Route path="question" element={<Question/>}/>
+            <Route path="ask" element={<Ask/>}/>
+            <Route path="post" element={<Post/>}/>
+            <Route path="feedback" element={<Feedback/>}/>
+            <Route path="signup" element={<Signup/>}/>
+          </Route>
          </Routes>
-      </header>
-     
-    </div>
   );
 }
 
