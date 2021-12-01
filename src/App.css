@@ -5,22 +5,34 @@
 
 html,body,#root,.App{
   height: 100%;
-}
-
-.App{
-  padding: 15px;
-  background-color: rgb(29, 29, 158);
-  margin: auto;
+  background-color:  #E5E5E5;;
 }
 
 header{
-  height: 60px;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 10px;
+  background-color:#FFFFFF;
+  box-shadow: 0px 4px 4px 4px rgba(79, 79, 79, 0.15);
+  padding: 20px 0;
 }
-.page-section{
-  background-color: white;
-  height: 90%;
+.container{
+  max-width: 1200px;
+  /* padding: 0 10px; */
+  margin: auto;
+}
+
+header .container{
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap:15px;
+  align-items: center;
+}
+.login-button,.sign-up-button{
+  padding: 8px 20px;
+  background: #0080A8;
+  color: white;
+  border-radius: 10px;
+  
+}
+.login-button{
+  background-color: unset;
+  color: #0080A8;
 }
