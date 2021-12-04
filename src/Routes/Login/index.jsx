@@ -1,4 +1,4 @@
-
+import "./style.css"
 const Login = () => {
     return (
         <div>
@@ -11,9 +11,10 @@ const Login = () => {
                             <input type="text"/>
                         </div>
                         <div className="input-field">
-                            <div className="form-label">Email</div>
+                            <div className="form-label">Password</div>
                             <input type="text"/>
                         </div>
+                        <button>Login</button>
                     </form>
                 </div>
             </div>

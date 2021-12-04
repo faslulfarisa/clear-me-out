@@ -1,15 +1,18 @@
 
-const InputField = ({value,onChange,label}) => {
+const InputField = ({value,onChange,label,type="text",error}) => {
     return (
         <div className="input-field" >
         <input 
-        type="text" 
+        type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         />
         <div className={`form-label ${value? "filled-form-label" :""}`}>    
             {label}
-        </div>   
+        </div> 
+        {error &&
+        <div className="text-field-error-text">{error}</div>
+        }  
         </div>
     )
 }

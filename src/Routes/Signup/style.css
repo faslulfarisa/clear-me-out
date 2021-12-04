@@ -43,9 +43,18 @@ h1{
     font-size: 14px;
     /* left:5px; */
 }
-button{
+.sign-up-page-button{
     background-color: #0080A8;
     margin: 25px auto ;
     padding: 10px 50px;
     color: #FFFFFF;
+    cursor:pointer;
+    font-size: 24px;
+    border:none;
+    border-radius: 10px;
+}
+.text-field-error-text{
+    position: absolute;
+    top: calc(100% + 5px);
+    color: red;
 }
