@@ -29,7 +29,7 @@ const SignUp = () => {
             [key]:value
         })
     }
-    const signUpcall = (e) =>{
+    const signUpCall = (e) =>{
         e.preventDefault();
         // console.log(formData);
         if(!confirmPassword){
@@ -48,7 +48,7 @@ const SignUp = () => {
         <div className="container">
             <div className="sub-container">
             <h1>Sign Up</h1>
-            <form onSubmit={signUpcall}>
+            <form onSubmit={signUpCall}>
                 <InputField
                     value={fullName}
                     onChange={(value) => onChange("fullName",value)}
