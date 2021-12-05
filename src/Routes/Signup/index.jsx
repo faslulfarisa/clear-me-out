@@ -45,8 +45,7 @@ const SignUp = () => {
     }
    
     return (
-        <div className="container">
-            <div className="sub-container">
+        <div className="sign-up-container">
             <h1>Sign Up</h1>
             <form onSubmit={signUpCall}>
                 <InputField
@@ -74,7 +73,6 @@ const SignUp = () => {
                 />
                 <button type="submit" className="sign-up-page-button">Sign Up</button>
             </form>
-            </div>
         </div>
     )
 }

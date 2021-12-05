@@ -73,8 +73,7 @@ const Category = () => {
                     </div>      
                 </div>
             </div>  
-        </div>
-        
+        </div>       
     )
 }
 

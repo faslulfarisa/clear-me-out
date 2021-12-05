@@ -1,9 +1,7 @@
 import "./style.css"
 const Login = () => {
     return (
-        <div>
-            <div className="container">
-                <div className="sub-container">
+        <div className="login-container">
                     <h1>Log In</h1>
                     <form>
                         <div className="input-field">
@@ -14,10 +12,8 @@ const Login = () => {
                             <div className="form-label">Password</div>
                             <input type="text"/>
                         </div>
-                        <button>Login</button>
+                        <button className="login-page-login-button">Login</button>
                     </form>
-                </div>
-            </div>
         </div>
     )
 }

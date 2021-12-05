@@ -1,0 +1,13 @@
+.login-container{
+    background-color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+} 
+.login-page-login-button{
+    background-color: #0080A8;
+    margin: auto;
+    padding: 10px 50px;
+    color: #FFFFFF;
+    border-radius: 10px;
+}

@@ -4,7 +4,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-html,body,#root,.App{
+html,body,#root,.App{ 
   height: 100%;
   background-color:  #E5E5E5;;
 }
@@ -43,7 +43,7 @@ header .container{
   
 }
 .login-button{
-  background-color: unset;
+  background-color: unset; 
   color: #0080A8;
 }
 .category-container{
@@ -65,7 +65,7 @@ header .container{
   padding: 15px;
 }
 
-.details-section p{  
+.details-section p{   
   display:-webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient:vertical ;
@@ -81,4 +81,8 @@ header .container{
    height: 35px;
    text-overflow: ellipsis;
    font-size: 25px;
+}
+.main-section-container{
+  padding: 40px;
+  height: 100%;
 }
