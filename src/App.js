@@ -31,7 +31,7 @@ function App() {
             <Route path="ask" element={<Ask/>}/>
             <Route path="post" element={<Post/>}/>
             <Route path="feedback" element={<Feedback/>}/>
-            <Route path="signup" element={<Signup/>}/>
+            <Route path="sign-up" element={<Signup/>}/>
           </Route>
          </Routes>
   );
