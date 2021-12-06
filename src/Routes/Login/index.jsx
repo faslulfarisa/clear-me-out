@@ -11,6 +11,7 @@ const Login = () => {
         emailError:"",
         passwordError:"",
     });
+ 
     const {email,password}=formData;
     const {emailError, passwordError} = formErrorData;
     const onChange = (key,value)=>{
@@ -25,7 +26,7 @@ const Login = () => {
                 [key]:value
             }))
         }
-    
+   
     const loginCall = (e) =>{ 
         e.preventDefault();      
         if(!email){
@@ -56,10 +57,12 @@ const Login = () => {
                     <h1>Log In</h1>
                     <form onSubmit={loginCall}>
                         <InputField
+
                         value={email}
                         onChange={(value) => onChange("email",value)}
                         label= "Email"
                         error={emailError}
+                       
                         />
                         <InputField
                         value={password}

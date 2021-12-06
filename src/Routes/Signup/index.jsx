@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import InputField from "../../Components/InputField";
 import "./style.css"
 import {isValidEmail} from "../../Utility/validation"
@@ -18,6 +18,10 @@ const SignUp = () => {
    
     // console.log(formData);
     const [isFormSubmitted,setIsFormSubmitted]=useState(false);
+    useEffect(()=>{
+        // console.log("use effect");
+        formValidate();
+    },[formData])
     const {fullName, email, password, confirmPassword} = formData;
     const {fullNameError, emailError, passwordError, confirmPasswordError} = formErrorData;
     
@@ -26,7 +30,6 @@ const SignUp = () => {
             ...prev,
             [key]:value  
         }))
-        formValidate();
     }
     const onError =(key,value)=>{
         setFormErrorData(prev=>({
@@ -48,7 +51,7 @@ const SignUp = () => {
             onError("fullNameError","")
             }
         }
-        // console.log(fullName)
+        console.log(fullName)
         if(!email){
             onError("emailError","Cannot be Empty");
             isValidForm = false;
