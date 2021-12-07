@@ -8,7 +8,8 @@ import Ask from './Routes/Ask';
 import Post from './Routes/Post';
 import Feedback from './Routes/Feedback';
 import Signup from './Routes/Signup';
-import LayOut from './LayOut'
+import LayOut from './LayOut';
+import Rough from './Routes/Rough';
 
 
 // Home
@@ -32,6 +33,8 @@ function App() {
             <Route path="post" element={<Post/>}/>
             <Route path="feedback" element={<Feedback/>}/>
             <Route path="sign-up" element={<Signup/>}/>
+            <Route path="rough" element={<Rough/>}/>
+
           </Route>
          </Routes>
   );

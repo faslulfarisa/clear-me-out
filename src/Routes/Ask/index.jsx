@@ -1,9 +1,8 @@
-
+import "./style.css"
 const Ask = () => {
     return (
-        <div>
-            <h1>Ask Me?</h1>
-        </div>
+        <div></div>
+         
     )
 }
 
