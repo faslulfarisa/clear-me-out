@@ -1,4 +1,4 @@
-import { useState } from "react" 
+import { useState,useEffect } from "react" 
 import InputField from "../../Components/InputField";
 import "./style.css"
 import {isValidEmail} from "../../Utility/validation"
@@ -11,7 +11,9 @@ const Login = () => {
         emailError:"",
         passwordError:"",
     });
- 
+    const [isFormSubmitted,setIsFormSubmitted]=useState(false);
+    
+    
     const {email,password}=formData;
     const {emailError, passwordError} = formErrorData;
     const onChange = (key,value)=>{
@@ -25,41 +27,56 @@ const Login = () => {
                 ...prev,
                 [key]:value
             }))
-        }
-   
-    const loginCall = (e) =>{ 
-        e.preventDefault();      
+    }
+    const formValidate = () =>{
+        let isValidForm = true ;
         if(!email){
             onError("emailError","Cannot be Empty")
+            isValidForm =false;
         }
         else{
             if(!isValidEmail(email)){
             onError("emailError","Enter Valid Email");
+            isValidForm =false;
             }else{
             onError("emailError","")
             } 
+
         }
         if(!password){
             onError("passwordError","Cannot be Empty");
+            isValidForm =false;
         }else{
             if(password.length<=7){
                 onError("passwordError","Provide Maximum 8 Characters");
+                isValidForm =false;
             }
             else{
             onError("passwordError","")
             } 
         }
+        return isValidForm
     
+    }     
+    useEffect(()=>{
+        formValidate();
+    },[formData])
+    const loginCall = (e) =>{ 
+        e.preventDefault(); 
+        setIsFormSubmitted(true);
+        if(formValidate()){
+            console.log("Login Success")
+        }         
+
     }
-    
     return (
         <div className="login-container">
                     <h1>Log In</h1>
                     <form onSubmit={loginCall}>
                         <InputField
-
                         value={email}
                         onChange={(value) => onChange("email",value)}
+                        isFormSubmitted={isFormSubmitted}
                         label= "Email"
                         error={emailError}
                        
@@ -67,9 +84,11 @@ const Login = () => {
                         <InputField
                         value={password}
                         onChange={(value) => onChange("password",value)}
+                        isFormSubmitted={isFormSubmitted}
                         label = "Password"
                         type = "password"
                         error={passwordError}
+                       
                         />
                         <button className="login-page-login-button">Login</button>
                     </form>

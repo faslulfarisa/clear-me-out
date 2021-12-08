@@ -5,8 +5,9 @@ const Rough = () => {
             <div className="ask-container">
                 <div className="box">
                     <button onClick={
-                        ()=>{}
-                    }>1</button>
+                        ()=>{
+                            alert("faslu")
+                        }}>1</button>
                 </div>
                 <div className="box">
                     <button onClick="">2</button>
