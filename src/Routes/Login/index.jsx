@@ -13,7 +13,6 @@ const Login = () => {
     });
     const [isFormSubmitted,setIsFormSubmitted]=useState(false);
     
-    
     const {email,password}=formData;
     const {emailError, passwordError} = formErrorData;
     const onChange = (key,value)=>{

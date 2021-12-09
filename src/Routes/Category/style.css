@@ -33,6 +33,7 @@
 button{
     display: block;
     border-radius: 8px;
+    border: 1px solid #474747;
     padding: 8px 20px;
     color:#474747;
 }
@@ -53,6 +54,5 @@ button{
 .question-section1,.question-section2,.question-section3{
     border: 1px solid #D8D8D8;
     margin: 10px;
-
-    
+    padding: 10px;   
 }

@@ -1,0 +1,18 @@
+.answer-page-container{
+    background: #FFFFFF;
+    height: 620px;
+}
+.question-section-container{
+    padding: 30px;
+}
+.answer-section1,.answer-section2,.answer-section3{
+    border: 1px solid #D8D8D8;
+    margin: 20px;
+    padding: 10px;   
+}
+.name-section{
+    padding-bottom: 5px;
+}
+.date-section{
+    padding-bottom: 5px;
+}

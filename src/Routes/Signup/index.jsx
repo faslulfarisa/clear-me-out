@@ -15,13 +15,13 @@ const SignUp = () => {
         passwordError:"",
         confirmPasswordError:""
     });
-   
     // console.log(formData);
     const [isFormSubmitted,setIsFormSubmitted]=useState(false);
     useEffect(()=>{
         // console.log("use effect");
         formValidate();
     },[formData])
+    
     const {fullName, email, password, confirmPassword} = formData;
     const {fullNameError, emailError, passwordError, confirmPasswordError} = formErrorData;
     
