@@ -10,7 +10,9 @@ import Ask from './Routes/Ask';
 import Post from './Routes/Post';
 import Feedback from './Routes/Feedback';
 import Answers from './Routes/Answers';
+
 import Rough from './Routes/Rough';
+import Counter from './Counter';
 
 
 // Home
@@ -22,7 +24,7 @@ import Rough from './Routes/Rough';
 // Login
 // SignUpPage
 
-function App() {
+function App({store}) {
   return (
         <Routes>
           <Route path="" element={<LayOut/>}>
@@ -35,7 +37,9 @@ function App() {
             <Route path="ask" element={<Ask/>}/>
             <Route path="post" element={<Post/>}/>
             <Route path="feedback" element={<Feedback/>}/>
+
             <Route path="rough" element={<Rough/>}/>
+            <Route path="counter" element={<Counter store={store}/>}/>
           </Route>
          </Routes>
   );
