@@ -87,4 +87,23 @@ header .container{
   height: 100%;
   background-color: #E5E5E5;
 }
-
+.counter-page-button{
+  background-color: brown;
+  color: #FFFFFF;
+  font-size: 24px;
+  border:none;
+  border-radius: 10px;
+}
+.counter-page{
+  max-width: 500px;
+  margin: auto;
+}
+.todo-input-section{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.list-out{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding-top: 10px;
+}

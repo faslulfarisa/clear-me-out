@@ -1,22 +1,66 @@
-import React from 'react'
+import { useState } from "react"
 
 const Counter = ({store}) => {
-    const add = ()=> {
+    const [input,setInput]=useState("");
+    const addTodo = (value)=> {
         store.dispatch({
-        type: 'Increment',
+            type: 'ADD_TODO',
+            value
       })
+      
     }
-    const sub = ()=> {
+    const deleteTodo = (index)=> {
         store.dispatch({
-        type: 'Decrement',  
-        })
+            type: 'DELETE_TODO',
+            index
+      }) 
+    }
+      const sortTodo = (value)=> {
+        store.dispatch({
+            type: 'SORT_TODO',
+            value
+      }) 
     }
     return (
-        <div>
-            <button className="sign-up-page-button" onClick={sub}>-</button>
-            <div>{store.getState()}</div>
-            <button className="sign-up-page-button" onClick={add}>+</button>      
-        </div>
+            <div className="counter-page">
+                <div className="todo-input-section">
+                <input type="text" 
+                    onChange={
+                        (e)=>{
+                            setInput(e.target.value)
+                        }}
+                    />
+                    <button className="counter-page-button"
+                        onClick={
+                        ()=>{
+                            addTodo(input);
+                        }
+                        }>ADD
+                    </button>
+                </div> 
+                <div className="counter-todo-list">
+                    {
+                        store.getState().map((value,i)=><div className="list-out" key={i}>
+                            {value} 
+                            
+                            <button className="counter-page-button"
+                            onClick={
+                                ()=>{
+                                    deleteTodo(i);
+                                    }
+                                }>DELETE</button>
+                            
+                        </div>)
+                    }
+                </div>
+                <button
+                onClick={
+                    ()=>{
+                        sortTodo(input) 
+                    }
+                }>SORT</button>
+            </div>
+        
     )
 }
 export default Counter
