@@ -13,6 +13,7 @@ import Answers from './Routes/Answers';
 
 import Rough from './Routes/Rough';
 import Counter from './Counter';
+import Todo from './Todo';
 
 
 // Home
@@ -39,7 +40,8 @@ function App({store}) {
             <Route path="feedback" element={<Feedback/>}/>
 
             <Route path="rough" element={<Rough/>}/>
-            <Route path="counter" element={<Counter store={store}/>}/>
+            <Route path="counter" element={<Counter/>}/>
+            <Route path="todo" element={<Todo/>}/>
           </Route>
          </Routes>
   );
