@@ -1,0 +1,36 @@
+.ask-container{
+    background-color: #FFFFFF;
+    padding: 40px;
+    height: 100%;   
+} 
+.ask-container-box{
+    max-width: 400px;
+}
+.category-input{
+    padding-top:30px ;
+    display: grid;
+    grid-template-columns:auto 1fr;
+    gap:20px;
+
+}
+select{
+    border-radius: 5px;
+}
+.question-area{
+    padding-top: 30px;
+}
+.question-field{
+    padding-bottom: 10px;
+}
+textarea{
+    width: 100%;
+    border-radius: 8px;
+}
+.ask-button{
+    background-color: #0080A8;
+    padding: 8px 30px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: auto;
+} 

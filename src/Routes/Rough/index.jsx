@@ -2,7 +2,7 @@ import "./style.css"
 const Rough = () => {
     return (
         <div className="main-ask-container">
-            <div className="ask-container">
+            <div className="rough-container">
                 <div className="box">
                     <button onClick={
                         ()=>{
