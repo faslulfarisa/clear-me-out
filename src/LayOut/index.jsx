@@ -2,9 +2,12 @@ import React from 'react'
 import { Outlet ,useNavigate} from 'react-router-dom'
 import logo from "../assets/icons/ClearMeOut.svg"
 import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux'
 
 const Layout = () => {
   const navigate = useNavigate();
+  const  isLoggedIn = useSelector(state=>state.isLoggedIn)
+  const dispatch =useDispatch()
     return (
     <div className="App">
       <header>
@@ -12,6 +15,7 @@ const Layout = () => {
           <div className="logo-section">
              <img src={logo} alt="Logo"/>
           </div>
+          {!isLoggedIn?<>
           <div 
           onClick={
             ()=>{
@@ -29,14 +33,19 @@ const Layout = () => {
           }
             className="sign-up-button">
                SignUp
-           </div>
           </div>
-   
+          </>:
+          <div onClick={()=>{
+             dispatch({
+               type:"LogOut"
+             })
+          }} className="sign-up-button">LogOut</div>
+          }
+        </div>
       </header>
       <div className="main-section-container">
       <Outlet/>
-      </div>
-     
+      </div> 
     </div>
        
     )

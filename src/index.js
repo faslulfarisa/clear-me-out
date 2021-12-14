@@ -10,7 +10,8 @@ import postTodo from './Services/postTodo';
 const reducer = (state=
   {
     todos:[],
-    counter:0
+    counter:0,
+    isLoggedIn:false
   },
   action)=>{ 
   let updatedList;
@@ -44,8 +45,18 @@ const reducer = (state=
             ...state,
             counter:state.counter-1
           } 
+      case 'LoggedIn':
+          return{
+            ...state,
+            isLoggedIn:true
+          }
+      case 'LogOut':
+          return{
+              ...state,
+              isLoggedIn:false
+            }
       default:
-          return state;     
+          return state    
   }
 }
           
