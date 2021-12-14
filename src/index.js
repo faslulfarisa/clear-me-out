@@ -5,34 +5,55 @@ import './index.css';
 import App from './App';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
+import postTodo from './Services/postTodo';
 
-// todo_list
-const reducer = (state=[],action)=>{ 
+const reducer = (state=
+  {
+    todos:[],
+    counter:0
+  },
+  action)=>{ 
+  let updatedList;
   switch (action.type){
       case 'ADD_TODO':
-          return [...state,action.value];
+        updatedList = [...state.todos,action.value];
+        postTodo(updatedList);
+        return {
+          ...state,
+          todos:updatedList
+        };
       case 'DELETE_TODO':
-          return state.filter((_val,i)=> i != action.index);  
-      // case 'SORT_TODO':
-      //     return [...state.sort()]
+        updatedList = state.todos.filter((_val,i)=> i != action.index);
+        postTodo(updatedList);
+        return {
+          ...state,
+          todos:updatedList
+        }
+      case 'CREATE':
+          return {
+            ...state,
+            todos:action.payload
+          }
+      case 'Increment':
+          return{
+            ...state,
+            counter:state.counter+1
+          }
+      case 'Decrement':
+          return {
+            ...state,
+            counter:state.counter-1
+          } 
       default:
           return state;     
   }
 }
-
-// const reducer = (state=0,action)=>{ 
-//   switch (action.type){
-//       case 'Increment':
-//           return state+1 ;
-//       case 'Decrement':
-//           return state-1;  
-//       default:
-//           return state;     
-//   }
-// }
+          
+      // case 'SORT_TODO':
+      //     return [...state.sort()]
+    
 const store = createStore(reducer);
 
-// const render = () =>{
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
@@ -43,7 +64,7 @@ const store = createStore(reducer);
     </React.StrictMode>,
     document.getElementById('root')
   );
-// }
+
 // store.subscribe(render);
 // render()
 // If you want to start measuring performance in your app, pass a function
