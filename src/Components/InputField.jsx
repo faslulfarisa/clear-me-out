@@ -2,7 +2,7 @@ import { useState } from "react"
 const InputField = ({value,onChange,label,type="text",error,isFormSubmitted=false}) => {
     const[isBlur,setIsBlur]=useState(false);
     return (
-        <div className="input-field" >
+        <div className="input-field" > 
         <input 
         type={type}
         value={value}
